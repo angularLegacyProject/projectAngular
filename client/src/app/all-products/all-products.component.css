@@ -17,7 +17,10 @@ body {
   width: 1450px;
   row-gap: 35px;
 }
-
+.paragraph{
+color: crimson;
+text-justify: auto;
+} 
 div {
   column-gap: 35px;
 }

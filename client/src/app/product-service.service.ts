@@ -8,7 +8,6 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductServiceService {
   constructor(private http: HttpClient) {}
-
   getProduct(id: string) {
     this.http
       .get(
@@ -16,7 +15,7 @@ export class ProductServiceService {
     http://localhost:5000/product/${id}`
       )
       .subscribe((result: any) => {
-        console.log(result.data);
+        return result.find((p :any)=> p.id == id);
       });
   }
 }

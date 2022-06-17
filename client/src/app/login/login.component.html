@@ -1,23 +1,54 @@
 <app-nav-bar></app-nav-bar>
-<form action="" id="login-form">
-    <h1>Welcome Back</h1>
-    <div class="input-box">
-        <input type="text">
-        <span data-placeholder="Username"></span>
-    </div>
-
-    <div class="input-box">
-        <input type="password">
-        <span data-placeholder="Password"></span>
-    </div>
-
-    <label>
-      <input type="checkbox" name="remember"> Remember me
+<div class="wrapper container-fluid">
+  <form class="form-signin" #inp="ngForm" (ngSubmit)="auth(inp)">
+    <h2 class="form-signin-heading">Please login</h2>
+    <input
+      type="text"
+      class="form-control"
+      #username="ngModel"
+      ngModel
+      name="email"
+      placeholder="Email Address"
+      required
+      minlength="3"
+    />
+    <!-- <div class="alert alert-danger">
+      <div>Email Required</div>
+      <div></div>
+    </div> -->
+    <input
+      type="password"
+      class="form-control"
+      #password="ngModel"
+      ngModel
+      name="password"
+      placeholder="Password"
+      required
+    />
+    <!-- <div class="alert alert-danger">
+      <div>Password Required</div>
+    </div> -->
+    <label class="checkbox">
+      <input
+        type="checkbox"
+        value="remember-me"
+        id="rememberMe"
+        name="rememberMe"
+      />
+      Remember me
     </label>
-
-    <button type="submit" class="login-btn">Login</button>
-
-    <div class="bottom-links">
-      <p>Don’t have account? <a href="#">Sign up</a></p>
-    </div>
-</form>
+    <button class="btn btn-lg btn-success btn-block" type="submit">
+      Login
+    </button>
+    <hr />
+    <button class="btn btn-danger">
+      Login With <i class="fa fa-google"></i>
+    </button>
+    &nbsp;
+    <button class="btn btn-primary">
+      Login With <i class="fa fa-facebook-f"></i>
+    </button>
+    <hr />
+    <p>Don't have Account,Signup <a routerLink="/signup">Here</a></p>
+  </form>
+</div>
